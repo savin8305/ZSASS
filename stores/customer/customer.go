@@ -87,13 +87,3 @@ func (s store) Delete(ctx *gofr.Context, name string) (int, error) {
 
 	return int(deleted.DeletedCount), nil
 }
-func (s store) Update(ctx *gofr.Context, name string, updateData models.Customer) error {
-	// fetch the Mongo collection
-	collection := ctx.MongoDB.Collection("customers")
-
-	filter := bson.D{primitive.E{Key: "name", Value: name}}
-	update := bson.D{primitive.E{Key: "$set", Value: updateData}}
-
-	_, err := collection.UpdateOne(ctx, filter, update)
-	return err
-}

@@ -68,19 +68,3 @@ func (h handler) List(ctx *gofr.Context) (interface{}, error) {
 	return resp, nil
 }
 
-func (h handler) Update(ctx *gofr.Context) (interface{}, error) {
-	name := ctx.Param("name")
-
-	var updateData models.Customer
-	err := ctx.Bind(&updateData)
-	if err != nil {
-		return nil, err
-	}
-
-	err = h.store.Update(ctx, name, updateData)
-	if err != nil {
-		return nil, err
-	}
-
-	return "Customer Updated!", nil
-}

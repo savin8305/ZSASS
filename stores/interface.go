@@ -12,5 +12,4 @@ type Customer interface {
 	Create(ctx *gofr.Context, model models.Customer) error
 	Delete(ctx *gofr.Context, name string) (int, error)
 	List(ctx *gofr.Context) ([]models.Customer, error) // Add List method
-	Update(ctx *gofr.Context, name string, updateData models.Customer) error // Add Update method
 }

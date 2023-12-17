@@ -20,7 +20,6 @@ func main() {
 	app.GET("/customer/:name", h.Get)
 	app.GET("/customers", h.List)      // New route for listing all customers
 	app.POST("/customer", h.Create)
-	app.PUT("/customer/:name", h.Update) // New route for updating a customer
 	app.DELETE("/customer/:name", h.Delete)
 
 	app.Server.HTTP.Port = 8097
