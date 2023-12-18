@@ -32,7 +32,25 @@ The project/repository includes the following bonus items:
 ![zs2](https://github.com/savin8305/ZSASS/assets/118232727/a7f0c7d0-0462-498d-bc4e-ccbe1b888ba3)
 ![zs3](https://github.com/savin8305/ZSASS/assets/118232727/80985690-8fbc-46e5-8ff9-a42e89c3e47d)
 
-
+## POSTMAN APIS
+`{
+	"info": {
+		"_postman_id": "ddd59b90-7704-4c0a-9bd9-ebf51b625243",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23774632"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}`
 
 
 
