@@ -27,10 +27,10 @@ The project/repository includes the following bonus items:
    ```bash
    git clone https://github.com/savin8305/ZSASS.git
    cd ZSASS
-## Sequence 
+## Sequence Diagram
 
+![Sequence Diagram](https://github.com/savin8305/ZSASS/assets/118232727/02867242-2c89-4d67-aa51-e32c4b84e370)
 
-![Sequence Diagram](https://github.com/savin8305/ZSASS/raw/main/stores/Sequence%20diagram%20image/your_diagram.svg)
 
 
 ## POSTMAN APIS
