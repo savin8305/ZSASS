@@ -33,24 +33,242 @@ The project/repository includes the following bonus items:
 ![zs3](https://github.com/savin8305/ZSASS/assets/118232727/80985690-8fbc-46e5-8ff9-a42e89c3e47d)
 
 ## POSTMAN APIS
-`{
+
+```
+{
 	"info": {
 		"_postman_id": "ddd59b90-7704-4c0a-9bd9-ebf51b625243",
-		"name": "New Collection",
+		"name": "Car Garage Management API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "23774632"
 	},
 	"item": [
 		{
-			"name": "New Request",
+			"name": "Create Car Entry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"New\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Car Entry - Success",
+					"originalRequest": {
+						"url": {
+							"raw": "http://localhost:8080/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars"
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"New\"\n}"
+						}
+					},
+					"status": "201 Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"body": "{\n  \"id\": 1,\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"New\"\n}",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"name": "Get List of Cars",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars"
+					]
+				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get List of Cars - Success",
+					"originalRequest": {
+						"url": {
+							"raw": "http://localhost:8080/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars"
+							]
+						},
+						"method": "GET",
+						"header": []
+					},
+					"status": "200 OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"body": "[\n  {\n    \"id\": 1,\n    \"brand\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2022,\n    \"condition\": \"New\"\n  }\n]",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"name": "Update Car Entry",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"{{randomInt 1 1000}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Car Entry - Success",
+					"originalRequest": {
+						"url": {
+							"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"{{randomInt 1 1000}}"
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}"
+						}
+					},
+					"status": "200 OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"body": "{\n  \"id\": {{randomInt 1 1000}},\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"name": "Delete Car Entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cars",
+						"{{randomInt 1 1000}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Car Entry - Success",
+					"originalRequest": {
+						"url": {
+							"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"{{randomInt 1 1000}}"
+							]
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"status": "204 No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"body": "",
+					"type": "text"
+				}
+			]
 		}
 	]
-}`
-
-
-
+}
+```
