@@ -169,7 +169,7 @@ The project/repository includes the following bonus items:
 					"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+					"raw": "http://localhost:8080/cars/{92345}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -177,7 +177,7 @@ The project/repository includes the following bonus items:
 					"port": "8080",
 					"path": [
 						"cars",
-						"{{randomInt 1 1000}}"
+						"{92345}"
 					]
 				}
 			},
@@ -186,7 +186,7 @@ The project/repository includes the following bonus items:
 					"name": "Update Car Entry - Success",
 					"originalRequest": {
 						"url": {
-							"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+							"raw": "http://localhost:8080/cars/{92345}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -194,7 +194,7 @@ The project/repository includes the following bonus items:
 							"port": "8080",
 							"path": [
 								"cars",
-								"{{randomInt 1 1000}}"
+								"{92345}"
 							]
 						},
 						"method": "PUT",
@@ -218,7 +218,7 @@ The project/repository includes the following bonus items:
 							"value": "application/json"
 						}
 					],
-					"body": "{\n  \"id\": {{randomInt 1 1000}},\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}",
+					"body": "{\n  \"id\": {92345},\n  \"brand\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2022,\n  \"condition\": \"Used\"\n}",
 					"type": "text"
 				}
 			]
@@ -229,7 +229,7 @@ The project/repository includes the following bonus items:
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+					"raw": "http://localhost:8080/cars/{92345}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -237,7 +237,7 @@ The project/repository includes the following bonus items:
 					"port": "8080",
 					"path": [
 						"cars",
-						"{{randomInt 1 1000}}"
+						"{92345}"
 					]
 				}
 			},
@@ -246,7 +246,7 @@ The project/repository includes the following bonus items:
 					"name": "Delete Car Entry - Success",
 					"originalRequest": {
 						"url": {
-							"raw": "http://localhost:8080/cars/{{randomInt 1 1000}}",
+							"raw": "http://localhost:8080/cars/{92345}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -254,7 +254,7 @@ The project/repository includes the following bonus items:
 							"port": "8080",
 							"path": [
 								"cars",
-								"{{randomInt 1 1000}}"
+								"{92345}"
 							]
 						},
 						"method": "DELETE",
@@ -271,4 +271,5 @@ The project/repository includes the following bonus items:
 		}
 	]
 }
+
 ```
