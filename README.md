@@ -30,6 +30,7 @@ The project/repository includes the following bonus items:
 ## Sequence 
 
 
+![Sequence Diagram](https://github.com/savin8305/ZSASS/raw/main/stores/Sequence%20diagram%20image/your_diagram.svg)
 
 
 ## POSTMAN APIS
