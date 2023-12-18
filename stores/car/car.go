@@ -1,4 +1,4 @@
-package customer
+package car
 
 import (
 	"github.com/savin8305/ZSASS/models"
@@ -11,24 +11,24 @@ import (
 
 type store struct{}
 
-// List implements stores.Customer.
-func (store) List(ctx *gofr.Context) ([]models.Customer, error) {
+// List implements stores.car.
+func (store) List(ctx *gofr.Context) ([]models.car, error) {
 	panic("unimplemented")
 }
 
 // New is factory function for store layer
 //
-//nolint:revive // customer should not be used without proper initialization with required dependency
+//nolint:revive // car should not be used without proper initialization with required dependency
 func New() store {
 	return store{}
 }
 
 // Get returns the list of models from mongodb based on the filter passed in the request
-func (s store) Get(ctx *gofr.Context, name string) ([]models.Customer, error) {
-	resp := make([]models.Customer, 0)
+func (s store) Get(ctx *gofr.Context, name string) ([]models.car, error) {
+	resp := make([]models.car, 0)
 
 	// fetch the Mongo collection
-	collection := ctx.MongoDB.Collection("customers")
+	collection := ctx.MongoDB.Collection("cars")
 
 	filter := bson.D{}
 
@@ -48,7 +48,7 @@ func (s store) Get(ctx *gofr.Context, name string) ([]models.Customer, error) {
 	defer cur.Close(ctx)
 
 	for cur.Next(ctx) {
-		var c models.Customer
+		var c models.car
 		if err := cur.Decode(&c); err != nil {
 			return resp, errors.DB{Err: err}
 		}
@@ -59,10 +59,10 @@ func (s store) Get(ctx *gofr.Context, name string) ([]models.Customer, error) {
 	return resp, nil
 }
 
-// Create extracts JSON content from request body and unmarshal it as Customer and then put it into db
-func (s store) Create(ctx *gofr.Context, c models.Customer) error {
+// Create extracts JSON content from request body and unmarshal it as car and then put it into db
+func (s store) Create(ctx *gofr.Context, c models.car) error {
 	// fetch the Mongo collection
-	collection := ctx.MongoDB.Collection("customers")
+	collection := ctx.MongoDB.Collection("cars")
 
 	_, err := collection.InsertOne(ctx, c)
 
@@ -72,7 +72,7 @@ func (s store) Create(ctx *gofr.Context, c models.Customer) error {
 // Delete deletes a record from MongoDB, returns delete count and the error if it fails to delete
 func (s store) Delete(ctx *gofr.Context, name string) (int, error) {
 	// fetch the Mongo collection
-	collection := ctx.MongoDB.Collection("customers")
+	collection := ctx.MongoDB.Collection("cars")
 	filter := bson.D{}
 
 	filter = append(filter, primitive.E{

@@ -9,13 +9,13 @@ import (
 )
 
 type handler struct {
-	store stores.Customer
+	store stores.Car
 }
 
 // New is factory function for handler layer
 //
 //nolint:revive // handler should not be used without proper initilization with required dependency
-func New(c stores.Customer) handler {
+func New(c stores.Car) handler {
 	return handler{store: c}
 }
 
@@ -31,7 +31,7 @@ func (h handler) Get(ctx *gofr.Context) (interface{}, error) {
 }
 
 func (h handler) Create(ctx *gofr.Context) (interface{}, error) {
-	var c models.Customer
+	var c models.Car
 
 	err := ctx.Bind(&c)
 	if err != nil {
@@ -43,7 +43,7 @@ func (h handler) Create(ctx *gofr.Context) (interface{}, error) {
 		return nil, err
 	}
 
-	return "New Customer Added!", nil
+	return "New Car Added!", nil
 }
 
 func (h handler) Delete(ctx *gofr.Context) (interface{}, error) {
@@ -54,7 +54,7 @@ func (h handler) Delete(ctx *gofr.Context) (interface{}, error) {
 		return nil, err
 	}
 
-	return fmt.Sprintf("%v Customers Deleted!", deleteCount), nil
+	return fmt.Sprintf("%v Cars Deleted!", deleteCount), nil
 }
 
 // Add the following methods to the handler struct
